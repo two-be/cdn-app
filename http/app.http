@@ -1,4 +1,6 @@
 @host = http://localhost:5063
 
 ###
-GET {{host}}/json/th.json
+GET {{host}}/api/i18n/th
+###
+GET {{host}}/i18n/th.json

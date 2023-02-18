@@ -1,10 +1,15 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using CdnApp.Data;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+});
 builder.Services.AddCors();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -27,6 +32,7 @@ app.UseRouting();
 app.UseStaticFiles();
 
 app.MapBlazorHub();
+app.MapControllers();
 app.MapFallbackToPage("/_Host");
 
 app.Run();
