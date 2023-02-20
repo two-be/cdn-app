@@ -1,10 +1,13 @@
 #nullable disable
 
+using CdnApp.Abstracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CdnApp.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("api/[controller]")]
 public class I18nController : ControllerBase
 {
@@ -19,6 +22,7 @@ public class I18nController : ControllerBase
         }
         catch (Exception ex)
         {
+            // return InternalServerError(ex);
             return StatusCode(500, ex.InnerException?.Message ?? ex.Message);
         }
     }
