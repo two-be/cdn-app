@@ -1,0 +1,17 @@
+{
+    "LABEL": {
+        "BANK_NAME": "bank-name"
+    },
+    "NAVBAR_TITLE": {
+        "DASHBOARD": "dashboard",
+        "RATING": "rating"
+    },
+    "SUBTITLE": {
+        "RATING": "rating",
+        "RATING_COMPLETE": "rating-complete"
+    },
+    "TITLE": {
+        "RATING": "rating",
+        "RATING_COMPLETE": "rating-complete"
+    }
+}

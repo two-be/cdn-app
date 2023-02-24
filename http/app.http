@@ -1,18 +1,4 @@
 @host = http://localhost:5063
 
-# @name jwt
-POST {{host}}/api/jwt
-Content-Type: application/json
-
-{
-  "username": "Two"
-}
-
-###
-@token = {{jwt.response.body.token}}
-
-###
-GET {{host}}/api/i18n/th
-Authorization: Bearer {{token}}
 ###
 GET {{host}}/i18n/th.json
